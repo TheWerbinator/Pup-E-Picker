@@ -77,13 +77,27 @@ function App() {
     }
   }
 
+  const generateId = () => {
+    const allIds = dogs.map((dog) => dog.id);
+    let newId = 0;
+    while(newId === 0){
+      let testNum = Math.floor((Math.random() * 100));
+      if(!allIds.includes(testNum)){
+        newId = testNum
+        break
+      }
+    }
+    return newId;
+  }
+
   const addDog = async (newDog) => {
+    const newId = generateId();
     const newestAddition = {
       name: newDog.target[0].value,
       image: newDog.target[2].value,
       description: newDog.target[1].value,
       isFavorite: false,
-      id: (dogs.length)
+      id: newId
     }
     try {
       await fetch(`http://localhost:3000/dogs`, { 

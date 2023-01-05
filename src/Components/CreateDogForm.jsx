@@ -11,6 +11,9 @@ export const CreateDogForm = ({ addDog }) => {
       onSubmit={(e) => {
         e.preventDefault();
         addDog(e)
+        for(let i = 0; i < 2; i++){
+          e.target[i].value = ''
+        }
       }}
     >
       <h4>Create a New Dog</h4>
