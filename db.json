@@ -11,7 +11,7 @@
       "name": "Clifford",
       "image": "/src/assets/cowardly.png",
       "description": "Buckinghamshire peal outmaneuver Cargo compressing utilize Southwest whiff",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 1
     },
     {
@@ -32,7 +32,7 @@
       "name": "Maribel",
       "image": "/src/assets/cowardly.png",
       "description": "Pants ohm Turcotte drive mole Southwest North Awesome",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 4
     },
     {
@@ -46,7 +46,7 @@
       "name": "Hunter",
       "image": "/src/assets/boxer.png",
       "description": "Cheese Handcrafted owlishly program TCP Sanford shadowy",
-      "isFavorite": false,
+      "isFavorite": true,
       "id": 6
     },
     {
@@ -60,7 +60,7 @@
       "name": "Delores",
       "image": "/src/assets/chihuahua.avif",
       "description": "extend Soul Lake optimize Lead",
-      "isFavorite": true,
+      "isFavorite": false,
       "id": 8
     },
     {

@@ -9,23 +9,14 @@ export const DogCard = ({
 }) => {
 
   let { name, image, description, id, isFavorite } = dog;
-  const [favClassName, setFavClassName] = useState('favorite-overlay');
-  const [unfavClassName, setUnfavClassName] = useState('unfavorite-overlay');
-
+  const [isLoading, setIsLoading] = useState(false);
+  
   const handleFavs = (type) => {
-    if(type === 'fav') {
-      setFavClassName('favorite-overlay active');
-      setTimeout(() => {
-        setFavClassName('favorite-overlay');
-        handleFavorites(type, id)
-      }, 2500);
-    } else {
-      setUnfavClassName('unfavorite-overlay active');
-      setTimeout(() => {
-        setUnfavClassName('unfavorite-overlay');
-        handleFavorites(type, id)
-      }, 2500);
-    }
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      handleFavorites(type, id)
+    }, 500);
   }
 
   const handleTrash = () => {
@@ -35,15 +26,15 @@ export const DogCard = ({
   return (
     <div className="dog-card">
       {isFavorite ? (
-        <UnfavoriteButton onClick={() => handleFavs('unfav')} favClassName={favClassName}/>
+        <UnfavoriteButton onClick={() => handleFavs('unfav')} />
       ) : (
-        <FavoriteButton onClick={() => handleFavs('fav')} favClassName={favClassName}/>
+        <FavoriteButton onClick={() => handleFavs('fav')} />
       )}
 
       <TrashButton onClick={() => handleTrash()} />
 
-      <div className={favClassName}>{"<3"}</div>
-      <div className={unfavClassName}>{"</3"}</div>
+      <div className={`favorite-overlay ${isLoading && !isFavorite ? 'active' : ''}`}>{"<3"}</div>
+      <div className={`unfavorite-overlay ${isLoading && isFavorite ? 'active' : ''}`}>{"</3"}</div>
 
       <p className="dog-name">{name}</p>
       <img src={image} alt={name} />

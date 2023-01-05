@@ -7,13 +7,21 @@ import "./fonts/RubikBubbles-Regular.ttf";
 
 function App() {
   const [dogs, setDogs] = useState([]);
+  const [isActive, setIsActive] = useState(false);
   const [favActive, setFavActive] = useState(false);
-  const activeDogs = dogs.filter((dog) => favActive === true ? dog.isFavorite : !dog.isFavorite);
-
+  
   const [favoriteDogCount, setFavoriteDogCount] = useState(0);
   const [unfavoriteDogCount, setUnfavoriteDogCount] = useState(0);
 
   const [createDogActive, setCreateDogActive] = useState(false);
+
+  const activeDogs = dogs.filter((dog) => {
+    if(favActive === true && isActive === true){
+      return dog.isFavorite
+    } else if (favActive === false && isActive === true) {
+      return !dog.isFavorite
+    } else return dog
+  })
 
   const fetchDogs = async (url) => {
     try {
@@ -91,9 +99,6 @@ function App() {
   }
 
   const removeDog = async (id) => {
-    console.log(dogs[id].name);
-    dogs.splice(id, 1);
-    console.log(dogs);
     try {
       await fetch(`http://localhost:3000/dogs/${id}`, { 
         method: 'DELETE',
@@ -104,6 +109,10 @@ function App() {
     } catch (error) {
       console.error(error);
     }
+    fetchDogs('http://localhost:3000/dogs').then(result => {
+      setDogs(result);
+      initDogFavCount(result);
+    });
   }
 
   return (
@@ -112,7 +121,11 @@ function App() {
         <h1>pup-e-picker</h1>
       </header>
       <Section 
+        isActive={isActive}
+        setIsActive={(type) => setIsActive(type)}
+        createDogActive={createDogActive}
         setCreateDogActive={(type) => setCreateDogActive(type)} 
+        favActive={favActive}
         setFavActive={(type) => setFavActive(type)} 
         label={"Dogs: "} 
         favoriteDogCount={favoriteDogCount} 

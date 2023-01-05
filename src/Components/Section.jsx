@@ -1,40 +1,48 @@
-import { useState } from "react";
-
 export const Section = ({ 
   label, 
   children, 
   favoriteDogCount, 
-  unfavoriteDogCount, 
+  unfavoriteDogCount,
+  favActive, 
   setFavActive, 
-  setCreateDogActive }) => {
-  const [favClass, setFavClass] = useState('selector');
-  const [unfavClass, setUnfavClass] = useState('selector active');
-  const [createClass, setCreateClass] = useState('selector');
+  createDogActive,
+  setCreateDogActive,
+  isActive,
+  setIsActive
+}) => {
+  const favClass = favActive === true && isActive === true ? 'selector active' : 'selector';
+  const unfavClass = favActive === false && isActive === true ? 'selector active' : 'selector';
+  const createClass = createDogActive === true && isActive === false ? 'selector active' : 'selector';
 
   const handleSelected = (type) => {
-    console.log('handleSelected ran, type', type);
     switch (type) {
       case 'fav':
         setCreateDogActive(false)
-        setFavActive(true)
-        setFavClass('selector active')
-        setUnfavClass('selector')
-        setCreateClass('selector')
+        if(favActive === false) {
+          setFavActive(true)
+          setIsActive(true);
+        } else {
+          setIsActive(false);
+        }
         break;
     
       case 'unfav':
         setCreateDogActive(false)
-        setFavActive(false)
-        setFavClass('selector')
-        setUnfavClass('selector active')
-        setCreateClass('selector')
+        if(favActive === false) {
+          setIsActive(false);
+        } else {
+          setIsActive(true);
+          setFavActive(false);
+        }
         break;
-    
+
       case 'create':
-        setCreateDogActive(true)
-        setFavClass('selector')
-        setUnfavClass('selector')
-        setCreateClass('selector active')
+        setIsActive(false);
+        if(createDogActive === false) {
+          setCreateDogActive(true);
+        } else {
+          setCreateDogActive(false);
+        }
         break;
     
       default:
@@ -47,11 +55,7 @@ export const Section = ({
       <div className="container-header">
         <div className="container-label">{label}</div>
         <div className="selectors">
-          {/* Add the class 'active' to any selector in order to make it's color change */}
-          {/* This should display the favorited count */}
           <div className={favClass} onClick={() => handleSelected('fav')}>favorited ( {favoriteDogCount} )</div>
-
-          {/* This should display the unfavorited count */}
           <div className={unfavClass} onClick={() => handleSelected('unfav')}>unfavorited ( {unfavoriteDogCount} )</div>
           <div className={createClass} onClick={() => handleSelected('create')}>create dog</div>
         </div>
