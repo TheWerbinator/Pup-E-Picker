@@ -1,0 +1,144 @@
+{
+  "dogs": [
+    {
+      "name": "Thora",
+      "image": "/src/assets/boxer.png",
+      "description": "South frictionless atque architectures Legacy reintermediate payment East",
+      "isFavorite": false,
+      "id": 0
+    },
+    {
+      "name": "Clifford",
+      "image": "/src/assets/cowardly.png",
+      "description": "Buckinghamshire peal outmaneuver Cargo compressing utilize Southwest whiff",
+      "isFavorite": false,
+      "id": 1
+    },
+    {
+      "name": "Jeff",
+      "image": "/src/assets/dalmation.png",
+      "description": "Granite North connect Baht Metal North holistic deposit",
+      "isFavorite": false,
+      "id": 2
+    },
+    {
+      "name": "Jadon",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "aspernatur transmit Underpass female North tan music",
+      "isFavorite": true,
+      "id": 3
+    },
+    {
+      "name": "Maribel",
+      "image": "/src/assets/cowardly.png",
+      "description": "Pants ohm Turcotte drive mole Southwest North Awesome",
+      "isFavorite": true,
+      "id": 4
+    },
+    {
+      "name": "Kiara",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "quantify Assimilated yawning plain bypassing",
+      "isFavorite": true,
+      "id": 5
+    },
+    {
+      "name": "Hunter",
+      "image": "/src/assets/boxer.png",
+      "description": "Cheese Handcrafted owlishly program TCP Sanford shadowy",
+      "isFavorite": false,
+      "id": 6
+    },
+    {
+      "name": "Cristopher",
+      "image": "/src/assets/dalmation.png",
+      "description": "Tuna primary Oriental calculate channels",
+      "isFavorite": true,
+      "id": 7
+    },
+    {
+      "name": "Delores",
+      "image": "/src/assets/chihuahua.avif",
+      "description": "extend Soul Lake optimize Lead",
+      "isFavorite": true,
+      "id": 8
+    },
+    {
+      "name": "Delaney",
+      "image": "/src/assets/corgi.png",
+      "description": "Zimbabwe parallelism Paradigm fuchsia International Algeria till Northwest",
+      "isFavorite": true,
+      "id": 9
+    },
+    {
+      "name": "Leilani",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "fussy meh overjoyed Sports Mississippi",
+      "isFavorite": true,
+      "id": 10
+    },
+    {
+      "name": "Roscoe",
+      "image": "/src/assets/corgi.png",
+      "description": "Legacy Indiana Borders female Copernicium magenta program Human",
+      "isFavorite": true,
+      "id": 11
+    },
+    {
+      "name": "Hollie",
+      "image": "/src/assets/dalmation.png",
+      "description": "Branding generating Bethesda benchmark Home Antonio AGP",
+      "isFavorite": true,
+      "id": 12
+    },
+    {
+      "name": "Edna",
+      "image": "/src/assets/corgi.png",
+      "description": "olive Shoes Lempira Bespoke Northwest that Operations Coupe",
+      "isFavorite": false,
+      "id": 13
+    },
+    {
+      "name": "Danika",
+      "image": "/src/assets/boxer.png",
+      "description": "naive unbearably Van Malden deposit while Dodge",
+      "isFavorite": true,
+      "id": 14
+    },
+    {
+      "name": "Blake",
+      "image": "/src/assets/blue-heeler.png",
+      "description": "Account East Synchronised Northwest Agent",
+      "isFavorite": false,
+      "id": 15
+    },
+    {
+      "name": "Virginia",
+      "image": "/src/assets/corgi.png",
+      "description": "Cis Games deposit few Orchestrator Van implementation Dynamic",
+      "isFavorite": false,
+      "id": 17
+    },
+    {
+      "name": "Adele",
+      "image": "/src/assets/cowardly.png",
+      "description": "grey though cheerfully auxiliary tan blue Volvo Gust",
+      "isFavorite": false,
+      "id": 18
+    },
+    {
+      "name": "Kathryn",
+      "image": "/src/assets/cowardly.png",
+      "description": "payment Plastic Electric intranet Bicycle foreground Agent",
+      "isFavorite": false,
+      "id": 19
+    },
+    {
+      "name": "Dude",
+      "image": "/src/assets/boxer.jpeg",
+      "description": "what a guy",
+      "isFavorite": false,
+      "id": 20
+    }
+  ]
+}
